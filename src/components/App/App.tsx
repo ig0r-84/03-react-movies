@@ -50,7 +50,7 @@ function App() {
         )}
         {selectedFilm && (
           <MovieModal
-            film={selectedFilm}
+            movie={selectedFilm}
             onClose={() => setSelectedFilm(null)}
           />
         )}

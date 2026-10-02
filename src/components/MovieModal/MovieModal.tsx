@@ -3,11 +3,11 @@ import type { Movie } from "../../types/movie";
 import css from "./MovieModal.module.css";
 
 interface MovieModalProps {
-  film: Movie;
+  movie: Movie;
   onClose: () => void;
 }
 
-export default function MovieModal({ film, onClose }: MovieModalProps) {
+export default function MovieModal({ movie, onClose }: MovieModalProps) {
   return createPortal(
     <div className={css.backdrop} role="dialog" aria-modal="true">
       <div className={css.modal}>
@@ -19,18 +19,18 @@ export default function MovieModal({ film, onClose }: MovieModalProps) {
           &times;
         </button>
         <img
-          src={`https://image.tmdb.org/t/p/original${film.backdrop_path}`}
-          alt={film.title}
+          src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+          alt={movie.title}
           className={css.image}
         />
         <div className={css.content}>
-          <h2>{film.title}</h2>
-          <p>{film.overview}</p>
+          <h2>{movie.title}</h2>
+          <p>{movie.overview}</p>
           <p>
-            <strong>Release Date:</strong> {film.release_date}
+            <strong>Release Date:</strong> {movie.release_date}
           </p>
           <p>
-            <strong>Rating:</strong> {film.vote_average}/10
+            <strong>Rating:</strong> {movie.vote_average}/10
           </p>
         </div>
       </div>
